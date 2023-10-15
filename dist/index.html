@@ -7,7 +7,49 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="content">
+        <div id="column1">
+            <form>
+                <input id="city" placeholder="City/Country Code"/>
+            </form>
+            <div id="weather-display">
+                <h1 id="cityName"></h1>
+                <h1 id="temp"></h1>
+                <h1 id="main-weather"></h1>
+                <div id="cards">
+                    <div class="card">
+                        <h1>Feels like:  </h1>
+                        <h2 id="feels-like"></h1>
+                    </div>
+                    <div class="card">
+                        <h1>Rain:</h1>
+                        <h2 id="precipitation"></h2>
+                    </div>
+                    <div class="card">
+                        <h1>Visibility</h1>
+                        <h2 id="visibility"></h2>
+                    </div>
+                    <div class="card">
+                        <h1>Humidity</h1>
+                        <h2 id="humidity"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="column2">
+            <div class="big-card"></div>
+            <div class="big-card"></div>
+            <div class="card">
+                <h1>Cloudiness</h1>
+                <h2 id="cloudiness"></h2>
+            </div>
+            <div class="card">
+                <h1>Wind</h1>
+                <h2 id="wind-speed"></h1>
+                <h2 id="wind-gust"></h1>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
