@@ -1,4 +1,9 @@
 import "./styles.css";
+import clearSky from "./assets/backgrounds/clear-sky.jpg";
+import mist from "./assets/backgrounds/mist.jpeg";
+import rain from "./assets/backgrounds/rain.jpg";
+import clouds from "./assets/backgrounds/scattered-clouds.jpg";
+import snow from "./assets/backgrounds/snow.jpeg";
 
 const apiKey = 'e1772c01e5bff1382e52d76d5faf38bd';
 
@@ -19,6 +24,7 @@ async function fetchCurrentWeather(city){
 
     let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${geo.latitude}&lon=${geo.longitude}&appid=${apiKey}`)
     let response = await weather.json();
+    console.log(response);
     return response;
 }
 
@@ -42,7 +48,8 @@ function extractInfo(weather){
         wind_speed: weather.wind.speed,
         wind_gust: weather.wind.gust,
         clouds: weather.clouds.all,
-        city: weather.name
+        city: weather.name,
+        id: weather.weather[0].id
     }
 }
 
@@ -137,6 +144,7 @@ async function populateWeatherData(city){
     } else {
     	weather.rain = "0 mm";
     }
+    updateBackground(weather.id);
     document.querySelector("#cityName").textContent = weather.city;
     document.querySelector("#temp").textContent = `${Math.round((weather.temp - 273.15) * 100) / 100}° C`;
     document.querySelector("#main-weather").textContent = toTitleCase(weather.main_weather);
@@ -151,7 +159,6 @@ async function populateWeatherData(city){
 
 async function populateForecastData(city){
 	const forecast = await fetchForecast(city);
-	console.log(forecast);
     hourlyWeatherForecast(forecast);
     dailyWeatherForecast(forecast);
 	
@@ -200,6 +207,53 @@ function dailyWeatherForecast(forecast){
         daily.appendChild(weatherCode);
         dailyForecast.appendChild(daily);
     }
+}
+
+function updateBackground(code){
+    const body = document.querySelector("body");
+    let src;
+    switch (code) {
+        case 800:
+            src = clearSky;
+            break;
+        case 801:
+        case 802:
+        case 803:
+        case 804:
+            src = clouds;
+            break;
+        case 701:
+            src = mist;
+            break;
+        case 500:
+        case 501:
+        case 502:
+        case 503:
+        case 504:
+        case 511:
+        case 520:
+        case 521:
+        case 522:
+        case 531:
+            src = rain;
+            break;
+        case 600:
+        case 601:
+        case 602:
+        case 611:
+        case 612:
+        case 613:
+        case 615:
+        case 616:
+        case 620:
+        case 621:
+        case 622:
+            src = snow;
+            break;
+    }
+    body.style.background = `url('${src}') no-repeat`;
+    body.style.backgroundSize = "cover";
+    return;
 }
 
 
