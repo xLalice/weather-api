@@ -35,7 +35,7 @@ ol, ul {
 	height: 700px;
 	margin: 0 auto;
 	padding: 30px;
-	background-color: black;
+	background-color: #363640;
 	display: flex;
 	border-radius: 50px;
 	gap: 15px;
@@ -55,11 +55,12 @@ input {
 }
 
 #weather-display {
-	background-color: aqua;
+	background-color: #070f1b;
 	border-radius: 50px;
 	text-align: center;
 	padding: 80px 20px;
 	flex: 1;
+	color: white;
 }
 
 #temp {
@@ -85,14 +86,16 @@ input {
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 10px;
-	background-color: white;
+	background-color: #2b2d35;
 	border-radius: 20px;
 	padding: 10px;
+	color: white;
 }
 
 .card h2 {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
+	font-family:Arial, Helvetica, sans-serif
 }
 
 #column2 {
@@ -114,5 +117,40 @@ input {
 	grid-column: 1/-1;
 	background-color: gainsboro;
 	border-radius: 20px;
+}
+
+#hourly {
+	display: flex;
+}
+
+#daily {
+	display: flex;
+}
+
+.forecast{
+	padding: 20px;
+	background-color: #070a13;
+	color: white;
+}
+
+.forecast > h1 {
+	margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: arial;
+}
+
+.flex-item {
+	flex: 1;
+	padding: 15px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.flex-item > h1 {
+	font-size: 25px;
+	font-weight: bold;
 }
 
