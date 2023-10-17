@@ -16,22 +16,36 @@
                 <h1 id="cityName"></h1>
                 <h1 id="temp"></h1>
                 <h1 id="summary"></h1>
+                <img id="weather-icon">
                 <h1 id="main-weather"></h1>
+                
                 <div id="cards">
                     <div class="card">
-                        <h1>Feels like:  </h1>
+                        <span>
+                            <img id="temp-icon">
+                            <h1>Feels like:</h1>
+                        </span>
                         <h2 id="feels-like"></h1>
                     </div>
                     <div class="card">
-                        <h1>Rain:</h1>
+                        <span>
+                            <img id="rain-icon">
+                            <h1>Rain:</h1>
+                        </span>
                         <h2 id="precipitation"></h2>
                     </div>
                     <div class="card">
-                        <h1>Visibility</h1>
+                        <span>
+                            <img id="eye-icon">
+                            <h1>Visibility</h1>
+                        </span>
                         <h2 id="visibility"></h2>
                     </div>
                     <div class="card">
-                        <h1>Humidity</h1>
+                        <span>
+                            <img id="water-icon">
+                            <h1>Humidity</h1>
+                        </span>
                         <h2 id="humidity"></h2>
                     </div>
                 </div>
@@ -39,21 +53,45 @@
         </div>
         <div id="column2">
             <div class="big-card forecast">
-                <h1>Hourly Forecast</h1>
+                <span>
+                    <img id="time-icon">
+                    <h1>Hourly Forecast</h1>
+                </span>
+                
                 <div id="hourly"></div>
             </div>
             <div class="big-card forecast">
-                <h1>Daily Forecast</h1>
+                <span>
+                    <img id="calendar-icon">
+                    <h1>Daily Forecast</h1>
+                </span>
                 <div id="daily"></div>
             </div>
             <div class="card">
-                <h1>Cloudiness</h1>
+                <span>
+                    <img id="cloud-icon">
+                    <h1>Cloudiness</h1>
+                </span>
+                
                 <h2 id="cloudiness"></h2>
             </div>
             <div class="card">
-                <h1>Wind</h1>
+                <span>
+                    <img id="wind-icon">
+                    <h1>Wind</h1>
+                </span>
+                <span class="wind-span">
                 <h2 id="wind-speed"></h1>
+                
+                    <p>MPH</p>
+                    <p>Wind</p>
+                </span>
+                <span class="wind-span">
                 <h2 id="wind-gust"></h1>
+                
+                    <p>MPH</p>
+                    <p>Gusts</p>
+                </span>
             </div>
         </div>
     </div>
