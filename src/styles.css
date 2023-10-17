@@ -30,6 +30,11 @@ ol, ul {
 	list-style: none;
 }
 
+body {
+	display: flex;
+	align-items: center;
+}
+
 #content {
 	width: 1000px;
 	height: 700px;
@@ -42,15 +47,22 @@ ol, ul {
 	opacity: 90%;
 }
 
+form {
+	display: flex;
+}
+
 input {
-	width: 100%;
+	flex: 1;
 	height: 25px;
 	border-radius: 40px;
 	margin-bottom: 20px;
+	background-color: #070a13;
+	color: white;
+	padding-left: 20px;
 }
 
 #column1 {
-	width: 40%;
+	flex-basis: 50%;
 	display: flex;
 	flex-direction: column;
 }
@@ -59,15 +71,25 @@ input {
 	background-color: #070f1b;
 	border-radius: 50px;
 	text-align: center;
-	padding: 80px 20px;
+	padding: 50px 20px;
 	flex: 1;
 	color: white;
-	opacity: 80%;
+}
+
+#weather-display > img {
+	display: inline;
+	margin: 0;
+	width: 50px;
+	height: 50px;
+}
+
+#cityName {
+	margin-bottom: 10px;
 }
 
 #temp {
-	font-size: 43px;
-	margin-bottom: 25px;
+	font-size: 50px;
+	font-weight: bold;
 }
 
 #main-weather {
@@ -83,14 +105,15 @@ input {
 }
 
 .card {
-	height: 100px;
+	flex: 1;
+	height: 80%;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 10px;
-	background-color: #2b2d35;
+	gap: 20px;
+	background-color: #0b0d16;
 	border-radius: 20px;
-	padding: 10px;
+	padding: 15px;
 	color: white;
 }
 
@@ -101,8 +124,7 @@ input {
 }
 
 #column2 {
-	height: 100%;
-	width: 100%;
+	width: 80%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(3, 1fr);
@@ -113,6 +135,9 @@ input {
 	grid-column: 1/-1;
 	background-color: gainsboro;
 	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 #weekly {
@@ -148,11 +173,46 @@ input {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 10px;
 }
 
 .flex-item > h1 {
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 }
+
+.flex-item > img {
+	height: 50px;
+	width: 50px;
+}
+
+span {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+span > img {
+	height: 20px;
+	width: 20px;
+}
+
+
+.big-card > span > h1 {
+	font-size:large;
+	font-weight: bold;
+}
+
+.wind-span {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	column-gap: 10px;
+}
+
+.wind-span > h2 {
+	grid-row: 1/-1;
+}
+
 
